@@ -3,7 +3,7 @@
 // ==========================================
 (function () {
     const PARTICLE_COUNT = 80;
-    const LOVE_TEXTS = ['I love you', 'berry', 'berry', 'berry', '♡', 'berry', 'berry', 'berry'];
+    const LOVE_TEXTS = ['happy', 'birthday', 'my', 'love', '♡', 'habi', 'habi', 'love'];
 
     // Parametric heart shape formula
     function heartX(t) {
@@ -175,7 +175,7 @@
         const pinPopupClose = document.getElementById('pin-popup-close');
 
         // DEFAULT PIN: Silakan ubah angka ini jika ingin PIN lain
-        const SECRET_PIN = "0411";
+        const SECRET_PIN = "0503";
 
         let pinAttempt = 0;
         let popupTimeout = null;
@@ -439,9 +439,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 // D. JIKA YANG DIKLIK ADALAH GALERI CINTA
                 else {
                     modalImg.src = this.src;
-                    modalImg.style.width = "88vw";
-                    modalImg.style.maxWidth = "420px";
-                    modalImg.style.aspectRatio = "3 / 4";
+                    modalImg.style.width = "min(88vw, 380px, calc(82vh * 9 / 16))";
+                    modalImg.style.maxWidth = "380px";
+                    modalImg.style.aspectRatio = "9 / 16";
                     modalImg.style.objectFit = "cover";
                 }
 
@@ -602,21 +602,21 @@ function ketikTeks(elemen, teks) {
 // ==========================================
 const PLAYLIST = [
     {
+        title: "Old Love",
+        artist: "Yuji & Putri Dahlia",
+        src: "audio/Yuji & Putri Dahlia - Old Love (Lyrics).mp3",
+        cover: "img/so.jpeg"
+    },
+    {
+        title: "What If I Call",
+        artist: "Alex Crichton",
+        src: "audio/Alex Crichton - What If I Call (Lyrics).mp3",
+        cover: "img/so.jpeg"
+    },
+    {
         title: "About You",
         artist: "The 1975",
         src: "audio/About-You.mp3",
-        cover: "img/so.jpeg"
-    },
-    {
-        title: "Lesung Pipi",
-        artist: "Raim Laode",
-        src: "audio/Lesung Pipi - Raim Laode (Lyrics).mp3",
-        cover: "img/so.jpeg"
-    },
-    {
-        title: "Penjaga Hati",
-        artist: "Nadhif Basalamah",
-        src: "audio/Nadhif Basalamah - penjaga hati Lirik.mp3",
         cover: "img/so.jpeg"
     }
 ];
@@ -930,9 +930,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let drawMoveCount = 0;
 
         setTimeout(() => {
-            const cardWidth = Math.round(canvas.parentElement.clientWidth) || 285;
+            const cardWidth = Math.round(canvas.parentElement.clientWidth) || 240;
             canvas.width = cardWidth;
-            canvas.height = Math.round(cardWidth * 4 / 3);
+            canvas.height = Math.round(cardWidth * 16 / 9);
 
             ctx.fillStyle = '#0a0a0a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);

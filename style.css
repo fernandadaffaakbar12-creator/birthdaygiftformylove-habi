@@ -768,8 +768,8 @@ body {
 .scratch-card {
     position: relative;
     flex: 0 0 auto;
-    width: 285px;
-    aspect-ratio: 3 / 4;
+    width: 240px;
+    aspect-ratio: 9 / 16;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
@@ -855,12 +855,13 @@ body {
 }
 
 .video-memories-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    justify-items: center;
+    gap: 22px;
     margin: 10px auto 0 auto;
-    max-width: 540px;
+    max-width: 620px;
     width: 100%;
 }
 
@@ -878,14 +879,9 @@ body {
     animation: float-photo 4.8s ease-in-out infinite;
 }
 
-/* Video 1 asli berukuran 1024x576 (16:9 Landscape) */
-.video-card.video-card-landscape {
-    max-width: 520px;
-}
-
-/* Video 2 asli berukuran 576x576 (1:1 Square) */
-.video-card.video-card-square {
-    max-width: 390px;
+/* Video 1 & 2 asli berukuran 576x1024 (9:16 Portrait) */
+.video-card.video-card-portrait {
+    max-width: 300px;
 }
 
 .video-card:nth-child(even) {
@@ -901,15 +897,15 @@ body {
 
 .video-card-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 8px;
-    padding: 2px 6px 10px 6px;
+    padding: 2px 4px 10px 4px;
 }
 
 .video-card-caption {
     font-family: 'Caveat', cursive;
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     color: #ffe4ec;
     text-align: left;
     line-height: 1.2;
@@ -939,13 +935,10 @@ body {
     box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
-/* Rasio aspek sesuai dimensi asli file video */
-#video-card-1 .video-media-box {
-    aspect-ratio: 16 / 9;
-}
-
+/* Rasio aspek sesuai dimensi asli file video (576x1024 - 9:16 Portrait) */
+#video-card-1 .video-media-box,
 #video-card-2 .video-media-box {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 9 / 16;
 }
 
 .memory-video {
@@ -1494,14 +1487,14 @@ body {
     }
 
     .gallery-scroll {
-        padding: 20px calc(50% - min(42vw, 165px));
+        padding: 20px calc(50% - min(38vw, 145px));
         gap: 16px;
     }
 
     .scratch-card {
-        width: 84vw;
-        max-width: 330px;
-        aspect-ratio: 3 / 4;
+        width: 76vw;
+        max-width: 290px;
+        aspect-ratio: 9 / 16;
         border-radius: 14px;
     }
 
@@ -1535,16 +1528,17 @@ body {
     }
 
     .video-memories-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
         max-width: 100%;
         width: 100%;
         gap: 24px;
     }
 
     .video-card,
-    .video-card.video-card-landscape,
-    .video-card.video-card-square {
-        width: 100%;
-        max-width: 100%;
+    .video-card.video-card-portrait {
+        width: 86vw;
+        max-width: 330px;
         padding: 10px 10px 12px 10px;
         border-radius: 16px;
     }
